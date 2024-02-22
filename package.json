@@ -4,12 +4,15 @@
   "description": "\"this is my backend video series with practice\"",
   "main": "index.js",
   "scripts": {
-    "test": "chai backend"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [
     "chai",
     "backend"
   ],
   "author": "Shivam gupta",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
 }
