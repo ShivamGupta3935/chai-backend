@@ -4,13 +4,14 @@ import dotenv from "dotenv"
 
 import connectDB from "./db/index.js";
 import express from "express"
+import {app} from "./app.js"
 
 // import mongoose from "mongoose";
 // import { DB_NAME } from "./constants";
 
 // import { Express } from "express";
 const app = express()
-const port = process.env.PORT || 8080;
+// const port = process.env.PORT || 8080;
 dotenv.config(
     {
         path: "./.env"
@@ -22,8 +23,8 @@ connectDB()
         console.log("Error :", error);
         throw error;
     })
-    app.listen(port, () => {
-        console.log(`Server running at http://:${port}/`);
+    app.listen(process.env.PORT || 8080, () => {
+        console.log(`Server running at http://localhost:${process.env.PORT}`);
     })
 })
 .catch( (err) => {
